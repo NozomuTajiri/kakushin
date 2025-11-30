@@ -1,0 +1,51 @@
+# E2E Test Scenario: 10分ドキュメンタリー
+# Duration: 600 seconds (10 minutes)
+
+title: "東京の一日"
+duration: 600
+language: ja
+style: cinematic
+
+scenario: |
+  東京の一日を追ったドキュメンタリー映像。
+
+  第1幕：夜明け（0:00-2:00）
+  まだ暗い早朝の東京。新宿の高層ビル群のシルエットが徐々に明るくなっていく。
+  始発電車が動き出し、清掃員が街を掃除している。
+  築地市場では、まだ暗いうちから仕事が始まっている。
+
+  第2幕：朝のラッシュ（2:00-4:00）
+  通勤ラッシュの渋谷駅。サラリーマンや学生が足早に歩いていく。
+  駅の改札を通る人々の波。コーヒーショップで朝食を買う人。
+  品川駅のホームで新幹線を待つビジネスマン。
+
+  第3幕：昼間の活気（4:00-6:00）
+  原宿の竹下通りを歩く若者たち。カラフルなファッションが目を引く。
+  浅草の仲見世通り。観光客が雷門で写真を撮っている。
+  東京タワーから見下ろす街並み。
+
+  第4幕：夕方の帰宅（6:00-8:00）
+  夕日に染まる東京の空。オフィスビルから出てくる人々。
+  居酒屋の提灯が灯り始める。新宿ゴールデン街の喧騒。
+  家路を急ぐ人々。子供を迎えに行く親。
+
+  第5幕：夜の輝き（8:00-10:00）
+  歌舞伎町のネオンが輝く。秋葉原の電気街。
+  お台場の夜景とレインボーブリッジ。
+  最終的に、六本木ヒルズから見る東京の夜景で締めくくる。
+
+expected_shots: 60-120
+expected_characters: 10
+expected_locations: 15
+
+quality_requirements:
+  min_quality_score: 70
+  min_consistency_score: 70
+  max_generation_time_hours: 4
+
+test_assertions:
+  - storyboard_has_five_acts
+  - location_variety
+  - time_progression_visible
+  - final_video_is_10_minutes
+  - quality_score_acceptable

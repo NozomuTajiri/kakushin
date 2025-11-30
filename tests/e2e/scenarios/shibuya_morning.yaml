@@ -1,0 +1,37 @@
+# E2E Test Scenario: 朝の渋谷
+# Duration: 60 seconds (1 minute)
+
+title: "朝の渋谷"
+duration: 60
+language: ja
+style: cinematic
+
+scenario: |
+  早朝の渋谷スクランブル交差点。
+
+  静かな朝、まだ人通りの少ない交差点に朝日が差し込む。
+  一人のサラリーマンが足早に横断歩道を渡っていく。
+  その後ろを、学生服を着た女子高生が友人と談笑しながら歩いてくる。
+
+  カメラは徐々に引いていき、巨大なスクリーンに映る広告が見える。
+  街が徐々に目覚めていく様子を捉える。
+
+  最後に、交差点全体を見下ろすような俯瞰ショットで、
+  人々が行き交い始める様子を映し出す。
+
+expected_shots: 8-12
+expected_characters: 3
+expected_locations: 2
+
+quality_requirements:
+  min_quality_score: 70
+  min_consistency_score: 70
+  max_artifacts: 5
+
+test_assertions:
+  - storyboard_has_characters
+  - storyboard_has_locations
+  - segments_generated
+  - final_video_exported
+  - quality_score_acceptable
+  - consistency_maintained
